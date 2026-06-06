@@ -136,7 +136,7 @@ proyecto-web-crisis/
 │   └── script.js
 └── img/
     ├── gasolineria.webp
-    ├── jasolineriabanner.avif
+    ├── gasolineriabanner.avif
     └── icono.png
 ```
 
