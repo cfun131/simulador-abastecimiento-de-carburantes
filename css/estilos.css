@@ -1,0 +1,760 @@
+/* ==========================
+   VARIABLES
+========================== */
+
+:root {
+
+    --fondo: #081120;
+
+    --panel: #0f1b2d;
+
+    --panel2: #12233d;
+
+    --amarillo: #f7b500;
+
+    --verde: #39d353;
+
+    --rojo: #ff4d4d;
+
+    --azul: #4da6ff;
+
+    --texto: #f8fafc;
+
+    --gris: #94a3b8;
+
+    --borde: #1f3655;
+
+}
+
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background: var(--fondo);
+
+    color: var(--texto);
+
+    line-height: 1.6;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header {
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    background: #06101d;
+
+    border-bottom: 1px solid var(--borde);
+
+    padding: 15px 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.logo img {
+
+    width: 55px;
+}
+
+.logo h1 {
+
+    font-size: 1.4rem;
+
+    color: var(--amarillo);
+}
+
+.logo p {
+
+    font-size: .8rem;
+
+    color: var(--gris);
+}
+
+nav {
+
+    display: flex;
+
+    gap: 25px;
+}
+
+nav a {
+
+    text-decoration: none;
+
+    color: white;
+
+    transition: .3s;
+}
+
+nav a:hover {
+
+    color: var(--amarillo);
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 80px;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, .65),
+            rgba(0, 0, 0, .65)),
+        url("../img/gasolineriabanner.avif") no-repeat;
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.hero-content {
+
+    max-width: 650px;
+}
+
+.hero h3 {
+
+    color: #7ee787;
+
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+
+    font-size: 4rem;
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.hero span {
+
+    color: var(--amarillo);
+}
+
+.hero p {
+
+    font-size: 1.1rem;
+
+    color: #dbe4ee;
+}
+
+/* ==========================
+   CONTENEDOR
+========================== */
+
+.contenedor {
+
+    width: 90%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 70px 0;
+}
+
+.titulo-seccion {
+
+    margin-bottom: 20px;
+
+    color: #7ee787;
+}
+
+.descripcion {
+
+    color: var(--gris);
+
+    margin-bottom: 25px;
+}
+
+.card-contexto {
+
+    background: var(--panel);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 15px;
+
+    padding: 25px;
+}
+
+/* ==========================
+   DASHBOARD
+========================== */
+
+.dashboard {
+
+    width: 90%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.3fr;
+
+    gap: 20px;
+}
+
+.panel {
+
+    background: var(--panel);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 15px;
+
+    padding: 25px;
+}
+
+.panel h2 {
+
+    margin-bottom: 10px;
+}
+
+.panel p {
+
+    color: var(--gris);
+}
+
+/* ==========================
+   FORMULARIO
+========================== */
+
+.grupo {
+
+    margin-top: 20px;
+}
+
+.grupo label {
+
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+.grupo input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    background: #081120;
+
+    color: white;
+
+    border: 1px solid var(--borde);
+
+    border-radius: 10px;
+}
+
+.grupo input:focus {
+
+    outline: none;
+
+    border-color: var(--amarillo);
+}
+
+/* ==========================
+   BOTONES
+========================== */
+
+.botones {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.btn-calcular {
+
+    flex: 1;
+
+    background: var(--verde);
+
+    border: none;
+
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+.btn-limpiar {
+
+    flex: 1;
+
+    background: #334155;
+
+    border: none;
+
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+.btn-calcular:hover,
+.btn-limpiar:hover {
+
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   INFO BOX
+========================== */
+
+.info-box {
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background: #082342;
+
+    border-left: 5px solid var(--azul);
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.card {
+
+    background: var(--panel2);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    transition: .3s;
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+}
+
+.card h3 {
+
+    font-size: .9rem;
+
+    color: var(--gris);
+}
+
+.card span {
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 1.8rem;
+
+    font-weight: bold;
+}
+
+/* ==========================
+   BARRA DE COMBUSTIBLE
+========================== */
+
+.fuel-box {
+
+    margin-top: 25px;
+}
+
+.fuel-container {
+
+    width: 100%;
+
+    height: 35px;
+
+    background: #111;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    margin-top: 15px;
+}
+
+.fuel-bar {
+
+    height: 100%;
+
+    width: 80%;
+
+    border-radius: 30px;
+
+    transition: 1s;
+
+    background:
+        linear-gradient(90deg,
+            #39d353,
+            #f7b500,
+            #ff4d4d);
+}
+
+/* ==========================
+   RESUMEN
+========================== */
+
+.resumen-consumo {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.mini-card {
+
+    background: var(--panel2);
+
+    border-radius: 12px;
+
+    border: 1px solid var(--borde);
+
+    padding: 20px;
+}
+
+.mini-card span {
+
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 1.8rem;
+
+    font-weight: bold;
+}
+
+/* ==========================
+   RESULTADO TEXTO
+========================== */
+
+#resultadoTexto {
+
+    margin-top: 25px;
+
+    background: #081120;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    border: 1px solid var(--borde);
+}
+
+/* ==========================
+   TABLA
+========================== */
+
+.tabla-contenedor {
+
+    overflow-x: auto;
+}
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: var(--panel);
+}
+
+th {
+
+    background: #0d6846;
+
+    color: white;
+}
+
+th,
+td {
+
+    padding: 12px;
+
+    border: 1px solid var(--borde);
+
+    text-align: center;
+}
+
+tr:hover {
+
+    background: #12233d;
+}
+
+/* ==========================
+   CASOS
+========================== */
+
+.casos-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.caso {
+
+    background: var(--panel);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+.caso h3 {
+
+    margin-bottom: 15px;
+}
+
+.caso button {
+
+    margin-top: 20px;
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--amarillo);
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+
+    margin-top: 50px;
+
+    text-align: center;
+
+    padding: 30px;
+
+    border-top: 1px solid var(--borde);
+
+    color: var(--gris);
+}
+
+/* ==========================
+   ESTADOS
+========================== */
+
+.normal {
+
+    color: var(--verde);
+
+    font-weight: bold;
+}
+
+.advertencia {
+
+    color: var(--amarillo);
+
+    font-weight: bold;
+}
+
+.critico {
+
+    color: var(--rojo);
+
+    font-weight: bold;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:1100px) {
+
+    .dashboard {
+
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .casos-grid {
+
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:768px) {
+
+    header {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+
+        padding: 40px;
+    }
+
+    .hero h2 {
+
+        font-size: 2.5rem;
+    }
+
+    .cards {
+
+        grid-template-columns: 1fr;
+    }
+
+    .resumen-consumo {
+
+        grid-template-columns: 1fr;
+    }
+
+    .botones {
+
+        flex-direction: column;
+    }
+}
+
+/* ==========================
+   ANIMACIÓN DE ENTRADA
+========================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.card {
+    animation: aparecer .6s ease;
+}
+
+.panel {
+    animation: aparecer .8s ease;
+}
+
+.card-contexto {
+    animation: aparecer 1s ease;
+}
+
+.caso {
+    animation: aparecer 1.2s ease;
+}
+
+.mini-card {
+    animation: aparecer 1s ease;
+}
+
+.tabla-contenedor {
+    animation: aparecer 1.3s ease;
+}
+
+.hero-content {
+    animation: aparecer 1.2s ease;
+}

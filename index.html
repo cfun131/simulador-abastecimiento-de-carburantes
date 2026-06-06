@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuelTrack Bolivia</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <!---icono-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FuelTrack Bolivia</title>
+
+    <link rel="icon" href="img/icono.png">
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="img/gasolineria.webp" alt="FuelTrack">
+
+            <div>
+                <h1>FUELTRACK</h1>
+                <p>BOLIVIA</p>
+            </div>
+
+        </div>
+
+        <nav>
+
+            <a href="#inicio">Inicio</a>
+            <a href="#contexto">Contexto</a>
+            <a href="#simulador">Simulador</a>
+            <a href="#resultados">Resultados</a>
+            <a href="#casos">Casos</a>
+            <a href="#conclusiones">Conclusiones</a>
+
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section id="inicio" class="hero">
+
+        <div class="hero-content">
+
+            <h3>Simula. Analiza. Planifica.</h3>
+
+            <h2>
+                Controla tus reservas
+                <span>de combustible</span>
+            </h2>
+
+            <p>
+                Anticipa situaciones críticas,
+                optimiza el abastecimiento y
+                asegura la continuidad operativa.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTEXTO -->
+
+    <section id="contexto" class="contenedor">
+
+        <h2 class="titulo-seccion">
+            Contexto del problema
+        </h2>
+
+        <div class="card-contexto">
+
+            <p>
+                En situaciones de alta demanda o problemas de abastecimiento,
+                las estaciones de servicio deben monitorear cuidadosamente
+                sus reservas de combustible.
+            </p>
+
+            <p>
+                Este simulador permite estimar cuánto tiempo durará una reserva,
+                identificar cuándo se alcanzará un nivel crítico y analizar
+                diferentes escenarios de consumo.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- DASHBOARD -->
+
+    <section id="simulador" class="dashboard">
+
+        <!-- PANEL IZQUIERDO -->
+
+        <div class="panel">
+
+            <h2>🧮 Simulador</h2>
+
+            <p>
+                Ingrese los datos para calcular la duración de la reserva.
+            </p>
+
+            <div class="grupo">
+
+                <label>
+                    Reserva Inicial (L)
+                </label>
+
+                <input type="number" id="reservaInicial">
+
+            </div>
+
+            <div class="grupo">
+
+                <label>
+                    Consumo Diario (L)
+                </label>
+
+                <input type="number" id="consumoDiario">
+
+            </div>
+
+            <div class="grupo">
+
+                <label>
+                    Reabastecimiento Diario (L)
+                </label>
+
+                <input type="number" id="reabastecimiento">
+
+            </div>
+
+            <div class="grupo">
+
+                <label>
+                    Nivel de Seguridad / Crítico (L)
+                </label>
+
+                <input type="number" id="nivelCritico">
+
+            </div>
+
+            <div class="botones">
+
+                <button class="btn-calcular" onclick="calcular()">
+
+                    Calcular
+
+                </button>
+
+                <button class="btn-limpiar" onclick="limpiarFormulario()">
+
+                    Limpiar
+
+                </button>
+
+            </div>
+
+            <div class="info-box">
+
+                <strong>¿Qué es el nivel crítico?</strong>
+
+                <p>
+                    Es la cantidad mínima de combustible que debe mantenerse
+                    como reserva de seguridad para evitar problemas de abastecimiento.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- PANEL DERECHO -->
+
+        <div id="resultados" class="panel resultados">
+
+            <h2>
+                📊 Resultados Principales
+            </h2>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>Reserva Inicial</h3>
+
+                    <span id="cardReserva">
+                        0 L
+                    </span>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Consumo Diario</h3>
+
+                    <span id="cardConsumo">
+                        0 L
+                    </span>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Días Seguros</h3>
+
+                    <span id="cardDias">
+                        0
+                    </span>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>Estado</h3>
+
+                    <span id="cardEstado">
+                        ---
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- BARRA -->
+
+            <div class="fuel-box">
+
+                <h3>
+                    Nivel de combustible actual
+                </h3>
+
+                <div class="fuel-container">
+
+                    <div id="fuelBar" class="fuel-bar">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RESUMEN -->
+
+            <div class="resumen-consumo">
+
+                <div class="mini-card">
+
+                    <h4>
+                        Consumo mensual
+                    </h4>
+
+                    <span id="consumoMensual">
+                        0 L
+                    </span>
+
+                </div>
+
+                <div class="mini-card">
+
+                    <h4>
+                        Consumo anual
+                    </h4>
+
+                    <span id="consumoAnual">
+                        0 L
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- MENSAJE -->
+
+            <div id="resultadoTexto">
+
+                Ingrese datos para comenzar.
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TABLA -->
+
+    <section class="contenedor">
+
+        <h2 class="titulo-seccion">
+
+            Simulación Día a Día
+
+        </h2>
+
+        <p class="descripcion">
+
+            La siguiente tabla muestra cómo evoluciona
+            la reserva según el consumo y reabastecimiento
+            definido por el usuario.
+
+        </p>
+
+        <div class="tabla-contenedor">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Día</th>
+                        <th>Consumo</th>
+                        <th>Reabastecimiento</th>
+                        <th>Reserva</th>
+                        <th>Estado</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="tablaResultados">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- CASOS -->
+
+    <section id="casos" class="contenedor">
+
+        <h2 class="titulo-seccion">
+
+            Casos de Estudio
+
+        </h2>
+
+        <p class="descripcion">
+
+            Seleccione un escenario para cargar
+            automáticamente los datos de prueba.
+
+        </p>
+
+        <div class="casos-grid">
+
+            <div class="caso">
+
+                <h3>🟢 Caso A</h3>
+
+                <p>
+                    Abastecimiento normal.
+                </p>
+
+                <button onclick="caso1()">
+
+                    Cargar Caso A
+
+                </button>
+
+            </div>
+
+            <div class="caso">
+
+                <h3>🟡 Caso B</h3>
+
+                <p>
+                    Consumo elevado.
+                </p>
+
+                <button onclick="caso2()">
+
+                    Cargar Caso B
+
+                </button>
+
+            </div>
+
+            <div class="caso">
+
+                <h3>🔴 Caso C</h3>
+
+                <p>
+                    Situación crítica.
+                </p>
+
+                <button onclick="caso3()">
+
+                    Cargar Caso C
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONCLUSIONES -->
+
+    <section id="conclusiones" class="contenedor">
+
+        <h2 class="titulo-seccion">
+
+            Conclusiones
+
+        </h2>
+
+        <div class="card-contexto">
+
+            <p>
+                Este simulador permite visualizar cómo
+                pequeñas variaciones en el consumo diario
+                pueden afectar significativamente la duración
+                de una reserva de combustible.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            FuelTrack Bolivia · Programación Web I · 2026
+
+        </p>
+
+        <p>
+
+            Desarrollado por Diego Alex
+
+        </p>
+
+    </footer>
+
+    <script src="js/scritp.js"></script>
+
+</body>
+
+</html>
